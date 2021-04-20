@@ -1,0 +1,16 @@
+.main{
+    grid-area:header;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 20px;
+    background-color: gainsboro;
+}
+.text{
+    font-family: "Poppins",sans-serif;
+    font-weight: 600;
+    line-height: 1.2;
+    color: midnightblue;
+    margin: 1.5rem 0;
+    font-size: 1.3rem;
+}

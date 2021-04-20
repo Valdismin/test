@@ -1,0 +1,15 @@
+.input{
+    width:94%;
+    border-radius: 10px;
+    height: 20px;
+}
+input::placeholder {
+    color: black;
+    font-size: 1.2em;
+    font-style: italic;
+}
+h2{
+    color: black;
+    font-size: 1.2em;
+    font-style: italic;
+}

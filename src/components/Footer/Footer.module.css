@@ -1,0 +1,5 @@
+.main{
+    height: 60px;
+    background-color: gainsboro;
+    grid-area:footer;
+}
