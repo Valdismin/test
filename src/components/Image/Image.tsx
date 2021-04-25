@@ -3,7 +3,7 @@ import {EditableSpan} from "../Common/EditableSpan";
 import s from "./Image.module.css"
 import {Button} from "@material-ui/core";
 
-type imageType = {
+export type imageType = {
     farm: number,
     id: string,
     isfamily: number,
@@ -20,9 +20,9 @@ type propsType = {
 
 export const Image = (props: propsType) => {
 
-    const [ids, SetIds] = useState("")
+    const [ids, SetIds] = useState<string>("")
 
-    function getImageUrl(farm: any, server: any, id: any, secret: any) {
+    function getImageUrl(farm: number, server: string, id: string, secret: string) {
         return `https://farm${farm}.staticflickr.com/${server}/${id}_${secret}.jpg`;
     }
 
@@ -31,7 +31,7 @@ export const Image = (props: propsType) => {
         SetIds(id)
     }
 
-    const renderImageItem = (image: any, idx: any) => {
+    const renderImageItem = (image: imageType, idx: string) => {
         const {farm, server, id, secret, title} = image;
 
 
@@ -39,7 +39,7 @@ export const Image = (props: propsType) => {
             <ul key={idx}>
                 <div className={s.image}>
                     <div className={s.title}>{title}</div>
-                    <img src={getImageUrl(farm, server, id, secret)} alt="" width="300px"/>
+                    <img src={getImageUrl(farm, server, id, secret)} width="300px"/>
                     <EditableSpan/>
                     {
                         !!localStorage.getItem(id) ?
@@ -52,6 +52,7 @@ export const Image = (props: propsType) => {
                             <Button variant="contained" size="small" color="primary"
                                     onClick={() => setValues(farm, server, id, secret, title)}>Bookmark it</Button>
                     }
+                    <Button></Button>
                 </div>
             </ul>
         );

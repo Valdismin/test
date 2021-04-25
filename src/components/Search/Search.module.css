@@ -2,6 +2,7 @@
     width:94%;
     border-radius: 10px;
     height: 20px;
+    outline:none
 }
 input::placeholder {
     color: black;
